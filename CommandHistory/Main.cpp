@@ -1,5 +1,3 @@
-#include <iostream>
-
 /*
 * - 요구 사항
 * [] 입력 Queue 직접 구현: 키보드 이벤트를 저장할 수 있는 입력 큐를 직접 작성
@@ -16,8 +14,44 @@
 * [] “show” 명령어를 입력하면 undo 스택과 redo 스택에 저장된 명령 내용 출력
 */
 
+#include <iostream>
+
+#include "Queue.h"
+#include "Stack.h"
+
 int main()
 {
-	char inputs[] = { 'A', 'B', 'C', 'D', 'E' };
+	char inputs[] = { 'A', 'B', 'C', 'D', 'E', 'F'};
+
+	Queue<char> q;
+	Stack<char> s;
+
+	for (const auto& e : inputs)
+	{
+		q.Enqueue(e);
+		s.Push(e);
+	}
+
+	for (const auto& e : inputs)
+	{
+		q.Enqueue(e);
+		s.Push(e);
+	}
+	
+	s.Display();
+
+	char out;
+	s.Pop(out);
+	s.Pop(out);
+	s.Display();
+
+	s.Pop(out);
+	s.Pop(out);
+	s.Pop(out);
+	s.Display();
+
+
+	std::cin.get();
+
 	return 0;
 }
