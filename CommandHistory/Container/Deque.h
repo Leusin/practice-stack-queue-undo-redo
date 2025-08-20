@@ -1,18 +1,23 @@
 #pragma once
 
 #include <iostream>
+#include <type_traits>
 
 template <typename T, size_t Size = 10>
 class Deque
 {
 public: // RAII
+	Deque() : capacity(Size + 1) // 실제 자료형의 크기보다 1 크다
+	{
+	}
+	~Deque() = default;
 
 public: // Message
 	bool AddFront(const T& element)
 	{
 		if (IsFull())
 		{
-			std::cout << "덱이 가득 차 요소를 추가할 수 없음\n";
+			//std::cout << "덱이 가득 차 요소를 추가할 수 없음\n";
 			return false;
 		}
 		
@@ -25,7 +30,7 @@ public: // Message
 	{
 		if (IsEmpty())
 		{
-			std::cout << "덱이 비어있어 요소를 제거할 수 없음\n";
+			//std::cout << "덱이 비어있어 요소를 제거할 수 없음\n";
 			return false;
 		}
 		data[front] = 0;
@@ -37,7 +42,7 @@ public: // Message
 	{
 		if (IsFull())
 		{
-			std::cout << "덱이 가득 차 요소를 추가할 수 없음\n";
+			//std::cout << "덱이 가득 차 요소를 추가할 수 없음\n";
 			return false;
 		}
 		data[rear] = element;
@@ -49,7 +54,7 @@ public: // Message
 	{
 		if (IsEmpty())
 		{
-			std::cout << "덱이 비어있어 요소를 제거할 수 없음\n";
+			//std::cout << "덱이 비어있어 요소를 제거할 수 없음\n";
 			return false;
 		}
 		rear = (rear - 1 + capacity) % capacity;
@@ -64,6 +69,7 @@ public: // Message
 			std::cout << "덱이 비어있어 요소를 가져올 수 없음\n";
 			return false;
 		}
+
 		outElement = data[front];
 		return true;
 	}
@@ -110,14 +116,30 @@ public: // Message
 		return (rear - front + capacity) % capacity;
 	}
 
-	void Display()
+	void Display() const
 	{
-		std::cout << "덱 내용:";
+		std::cout << " :";
+
+		if (IsEmpty())
+		{
+			std::cout << " 비어있음" << std::endl;
+			return;
+		}
 
 		size_t max = (front < rear) ? rear : rear + capacity;
 		for (int ix = front; ix < max; ++ix)
 		{
-			std::cout << " " << data[ix % capacity];
+			// T가 포인터 타입인지 컴파일 타임에 확인
+			if constexpr (std::is_pointer<T>::value)
+			{
+				// 1) 포인터 타입일 경우: 역참조
+				std::cout << " " << *data[ix % capacity];
+			}
+			else
+			{
+				// 2) 포인터가 아닐 경우: 그대로 출력
+				std::cout << " " << data[ix % capacity];
+			}
 		}
 
 		std::cout << std::endl;

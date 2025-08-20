@@ -14,25 +14,21 @@
 * [] “show” 명령어를 입력하면 undo 스택과 redo 스택에 저장된 명령 내용 출력
 */
 
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
 #include <iostream>
 
-#include "Container/Queue.h"
-#include "Container/Stack.h"
-#include "Command/ICommand.h"
+#include "Application.h"
 
 int main()
 {
-	char inputs[] = { 'A', 'B', 'C', 'D', 'E', 'F'};
-
-	Queue<char> eventQueue;
-
-	for (const char& input : inputs)
 	{
-		eventQueue.Enqueue(input);
+		Application app;
+		app.Run();
 	}
-
-	Stack<ICommand*> commandHistory;
-
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+	_CrtDumpMemoryLeaks();
 
 	return 0;
 }
