@@ -1,14 +1,51 @@
 # Undo Redo System 만들기
+C++로 구현하는 Command 패턴 기반의 실행 취소/재실행 시스템
 
-<img width="1115" height="908" alt="Image" src="https://github.com/user-attachments/assets/2b60dba3-3a67-40a4-90ee-3055d9fdcb7b" />
+<img width="558" height="454" alt="Image" src="https://github.com/user-attachments/assets/2b60dba3-3a67-40a4-90ee-3055d9fdcb7b" />
+
+
+## 주요 학습 내용
+- **템플릿으로 구현한 자료구조**: 자료구조 Stack, Queue, Deque 구현
+- **Command 패턴 적용**: 요청(command)을 객체로 캡슐화하여 Undo/Redo 시스템을 구현
+- **메모리 관리**: 날 포인터를 이용한 동적 메모리 할당 및 해제, 메모리 누수 디버깅
+
+
+## 폴더 구조
+``` c++
+/CommandHistory
+├── /Command
+│   ├── ICommand.h
+│   ├── AddInputCommand.h
+│   └── AddInputCommand.cpp 
+├── /Container
+│   ├── Deque.h
+| 	├── Queue.h
+│   └── Stack.h
+├── /Core
+│   ├── Application.h
+│   ├── Application.cpp
+│   ├── CommandInvoker.h
+| 	├── CommandInvoker.cpp
+| 	├── KeyInputManager.cpp
+│   └── KeyInputManager.h
+├── Main.cpp
+└── README.md
+```
+
+- **`/Container`**: 직접 구현한 제네릭 컨테이너(자료구조) 포함
+- **`/Command`**: 명령 패턴의 추상 클래스 `ICommand`와 구체 명령 클래스들을 정의
+- **`/Core`**: 프로그램의 전반적인 흐름을 제어하는 핵심 로직 클래스들
+
 
 ## TODO
+
 ### 요구 사항
 - [x] 입력 Queue 직접 구현: 키보드 이벤트를 저장할 수 있는 입력 큐를 직접 작성
 - [x] Stack 직접 구현: Undo 목록을 저장할 스택 / Redo 목록을 저장할 스택을 직접 작성
 - [ ] 명령 패턴을 활용해 구현하기
 	- [x] Command 패턴을 찾아 학습하고 이를 활용해 구현
 	- [ ] (제안): Undo/Redo 기록 시스템을 구현하는 다른 방법론도 함께 살펴보기
+
 ### 동작
 - [x] ‘A’, ‘B’, ‘C’, ‘D’, ‘E’ 키를 입력 받기
 - [x] 들어온 입력을 입력 Queue에 넣기
@@ -16,6 +53,7 @@
 - [x] “undo” 명령어를 입력하면 undo 실행
 - [x] “redo” 명령어를 입력하면 redo 실행
 - [x] “show” 명령어를 입력하면 undo 스택과 redo 스택에 저장된 명령 내용 출력
+
 
 ## Command 패턴 메모
 
