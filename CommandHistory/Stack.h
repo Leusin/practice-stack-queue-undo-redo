@@ -21,6 +21,8 @@ public:
 		}
 
 		data[back++] = element;
+
+		return true;
 	}
 
 	bool Pop()

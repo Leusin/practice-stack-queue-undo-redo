@@ -18,40 +18,21 @@
 
 #include "Queue.h"
 #include "Stack.h"
+#include "ICommand.h"
 
 int main()
 {
 	char inputs[] = { 'A', 'B', 'C', 'D', 'E', 'F'};
 
-	Queue<char> q;
-	Stack<char> s;
+	Queue<char> eventQueue;
 
-	for (const auto& e : inputs)
+	for (const char& input : inputs)
 	{
-		q.Enqueue(e);
-		s.Push(e);
+		eventQueue.Enqueue(input);
 	}
 
-	for (const auto& e : inputs)
-	{
-		q.Enqueue(e);
-		s.Push(e);
-	}
-	
-	s.Display();
+	Stack<ICommand*> commandHistory;
 
-	char out;
-	s.Pop(out);
-	s.Pop(out);
-	s.Display();
-
-	s.Pop(out);
-	s.Pop(out);
-	s.Pop(out);
-	s.Display();
-
-
-	std::cin.get();
 
 	return 0;
 }
