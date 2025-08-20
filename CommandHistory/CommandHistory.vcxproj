@@ -142,9 +142,12 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ICommand.h" />
-    <ClInclude Include="Queue.h" />
-    <ClInclude Include="Stack.h" />
+    <ClInclude Include="Command\ICommand.h" />
+    <ClInclude Include="Container\Queue.h" />
+    <ClInclude Include="Container\Stack.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Memo\Command 패턴 메모.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

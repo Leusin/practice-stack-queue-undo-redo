@@ -1,7 +1,7 @@
 /*
 * - 요구 사항
-* [] 입력 Queue 직접 구현: 키보드 이벤트를 저장할 수 있는 입력 큐를 직접 작성
-* [] Stack 직접 구현: Undo 목록을 저장할 스택 / Redo 목록을 저장할 스택을 직접 작성
+* [x] 입력 Queue 직접 구현: 키보드 이벤트를 저장할 수 있는 입력 큐를 직접 작성
+* [x] Stack 직접 구현: Undo 목록을 저장할 스택 / Redo 목록을 저장할 스택을 직접 작성
 * [] 명령 패턴을 활용해 구현하기
 *	[] Command 패턴을 찾아 학습하고 이를 활용해 구현
 *	[] (제안): Undo/Redo 기록 시스템을 구현하는 다른 방법론도 함께 살펴보기
@@ -16,9 +16,9 @@
 
 #include <iostream>
 
-#include "Queue.h"
-#include "Stack.h"
-#include "ICommand.h"
+#include "Container/Queue.h"
+#include "Container/Stack.h"
+#include "Command/ICommand.h"
 
 int main()
 {
