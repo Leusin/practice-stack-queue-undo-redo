@@ -1,19 +1,21 @@
 # Undo Redo System 만들기
 
+<img width="1115" height="908" alt="Image" src="https://github.com/user-attachments/assets/2b60dba3-3a67-40a4-90ee-3055d9fdcb7b" />
+
 ## TODO
 ### 요구 사항
-[x] 입력 Queue 직접 구현: 키보드 이벤트를 저장할 수 있는 입력 큐를 직접 작성
-[x] Stack 직접 구현: Undo 목록을 저장할 스택 / Redo 목록을 저장할 스택을 직접 작성
-[] 명령 패턴을 활용해 구현하기
-	[x] Command 패턴을 찾아 학습하고 이를 활용해 구현
-	[] (제안): Undo/Redo 기록 시스템을 구현하는 다른 방법론도 함께 살펴보기
+- [x] 입력 Queue 직접 구현: 키보드 이벤트를 저장할 수 있는 입력 큐를 직접 작성
+- [x] Stack 직접 구현: Undo 목록을 저장할 스택 / Redo 목록을 저장할 스택을 직접 작성
+- [ ] 명령 패턴을 활용해 구현하기
+	- [x] Command 패턴을 찾아 학습하고 이를 활용해 구현
+	- [ ] (제안): Undo/Redo 기록 시스템을 구현하는 다른 방법론도 함께 살펴보기
 ### 동작
-[x] ‘A’, ‘B’, ‘C’, ‘D’, ‘E’ 키를 입력 받기
-[x] 들어온 입력을 입력 Queue에 넣기
-[x] 입력 Queue에 들어온 순서대로 Undo 스택에 기록
-[x] “undo” 명령어를 입력하면 undo 실행
-[x] “redo” 명령어를 입력하면 redo 실행
-[x] “show” 명령어를 입력하면 undo 스택과 redo 스택에 저장된 명령 내용 출력
+- [x] ‘A’, ‘B’, ‘C’, ‘D’, ‘E’ 키를 입력 받기
+- [x] 들어온 입력을 입력 Queue에 넣기
+- [x] 입력 Queue에 들어온 순서대로 Undo 스택에 기록
+- [x] “undo” 명령어를 입력하면 undo 실행
+- [x] “redo” 명령어를 입력하면 redo 실행
+- [x] “show” 명령어를 입력하면 undo 스택과 redo 스택에 저장된 명령 내용 출력
 
 ## Command 패턴 메모
 
