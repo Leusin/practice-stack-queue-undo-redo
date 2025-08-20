@@ -1,5 +1,5 @@
 # Undo Redo System 만들기
-C++로 구현하는 Command 패턴 기반의 실행 취소/재실행 시스템
+C++로 구현하는 Command 패턴 기반의 실행 Undo/Redo 시스템
 
 <img width="558" height="454" alt="Image" src="https://github.com/user-attachments/assets/2b60dba3-3a67-40a4-90ee-3055d9fdcb7b" />
 
