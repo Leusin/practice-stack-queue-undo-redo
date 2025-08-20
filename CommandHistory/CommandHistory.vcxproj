@@ -140,25 +140,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="CommandInvoker.cpp" />
+    <ClCompile Include="Core\Application.cpp" />
+    <ClCompile Include="Core\CommandInvoker.cpp" />
     <ClCompile Include="Command\AddInputCommand.cpp" />
-    <ClCompile Include="KeyInputManager.cpp" />
+    <ClCompile Include="Core\KeyInputManager.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="CommandInvoker.h" />
+    <ClInclude Include="Core\Application.h" />
+    <ClInclude Include="Core\CommandInvoker.h" />
     <ClInclude Include="Command\AddInputCommand.h" />
     <ClInclude Include="Command\ICommand.h" />
     <ClInclude Include="Container\Deque.h" />
     <ClInclude Include="Container\Queue.h" />
     <ClInclude Include="Container\Stack.h" />
-    <ClInclude Include="KeyInputManager.h" />
+    <ClInclude Include="Core\KeyInputManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Memo\Command 패턴 메모.md" />
-    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

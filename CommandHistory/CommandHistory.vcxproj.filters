@@ -18,16 +18,16 @@
     <ClCompile Include="Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CommandInvoker.cpp">
+    <ClCompile Include="Core\CommandInvoker.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="Core\Application.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Command\AddInputCommand.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="KeyInputManager.cpp">
+    <ClCompile Include="Core\KeyInputManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,16 +41,16 @@
     <ClInclude Include="Command\ICommand.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CommandInvoker.h">
+    <ClInclude Include="Core\CommandInvoker.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="KeyInputManager.h">
+    <ClInclude Include="Core\KeyInputManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Container\Deque.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
+    <ClInclude Include="Core\Application.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Command\AddInputCommand.h">
@@ -59,6 +59,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Memo\Command 패턴 메모.md" />
-    <None Include="README.md" />
   </ItemGroup>
 </Project>
